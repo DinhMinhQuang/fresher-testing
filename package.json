@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "locales/*"
+    ]
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "mecore": "^1.1.1",
+    "nodemon": "^2.0.4"
+  }
+}

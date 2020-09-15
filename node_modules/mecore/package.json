@@ -1,0 +1,40 @@
+{
+  "name": "mecore",
+  "version": "1.1.1",
+  "main": "system.js",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
+    "@hapi/joi": "^17.1.0",
+    "@hapi/vision": "^6.0.0",
+    "await-async-foreach": "^1.0.3",
+    "axios": "^0.19.2",
+    "boom": "^7.3.0",
+    "cron": "^1.8.2",
+    "crypto-js": "^4.0.0",
+    "filehound": "^1.17.4",
+    "fs": "0.0.1-security",
+    "get-env": "^0.5.10",
+    "hapi-api-version": "^2.3.1",
+    "hapi-auth-jwt2": "^9.0.1",
+    "hapi-response-time": "^2.1.0",
+    "hapi-swagger": "^12.1.3",
+    "i18n-support-multi-instance": "^0.8.5",
+    "import-fresh": "^3.2.1",
+    "lodash": "^4.17.15",
+    "log4js": "^6.1.2",
+    "md5": "^2.2.1",
+    "mecore-hapi-i18n-multi-instance": "^3.0.1",
+    "mongoose": "^5.9.2",
+    "mongoose-auto-increment": "^5.0.1",
+    "node-rsa": "^1.0.8",
+    "request-ip": "^2.1.3",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
+}
