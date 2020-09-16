@@ -9,7 +9,6 @@ module.exports = {
     return { isValid: true };
   },
   async payloadFunc(request, reply) {
-    console.log('aaaaa');
     console.log(request.payload, request.auth.credentials);
     throw Boom.unauthorized(request.__('Thông tin xác thực không hợp lệ'));
   }

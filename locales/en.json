@@ -1,4 +1,7 @@
 {
 	"Client IP {{clientIp}}": "Client IP {{clientIp}}",
-	"\"x-api-client\" not found!": "\"x-api-client\" not found!"
+	"\"x-api-client\" not found!": "\"x-api-client\" not found!",
+	"Wrong username":"Wrong username",
+	"Wrong password":"Wrong password"
+	
 }

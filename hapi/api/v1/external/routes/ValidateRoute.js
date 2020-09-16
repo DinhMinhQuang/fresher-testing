@@ -10,20 +10,33 @@ module.exports = [
         path: '/v1/login',
         async handler(request, reply) {
             const payload = request.payload;
+            const user = await UserModel.findOne({ username: payload.username });
+            if (!user) {
+                return reply.api(
+                    request.i18n.__('Wrong username', {
+                        clientIp: request.clientIp
+                    })
+                )
+            }
             return new Promise((res, rej) => {
-                bcrypt.compare(payload.password, 10, (err, hashed) => {
-                    const user =  UserModel.findOne({ username: payload.username, password: hashed });
-                    if (user) {
-                        res(reply.api({
-                            message: "Successfully"
-                        }).code(1000));
-                    } else {
-                        res(reply.api({
-                            message: "Wrong password"
-                        }).code(1000))
+                bcrypt.compare(payload.password, user.password, (err, same) => {
+                    if (!same) {
+                        res(
+                            reply.api(
+                                request.i18n.__('Wrong password')
+                            )
+                        )
                     }
-                });
+                    res(
+                        reply.api(
+                            {
+                                "message": "successfully"
+                            }
+                        )
+                    )
+                })
             })
+
         },
         options: {
             auth: false,
