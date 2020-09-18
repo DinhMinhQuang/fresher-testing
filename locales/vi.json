@@ -1,3 +1,4 @@
 {
-	"Client IP {{clientIp}}": "Địa chỉ IP của bạn là {{clientIp}}"
+	"Client IP {{clientIp}}": "Địa chỉ IP của bạn là {{clientIp}}",
+	"Can't find": "Không tìm thấy dữ liệu"
 }

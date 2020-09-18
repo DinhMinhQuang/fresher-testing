@@ -11,7 +11,7 @@
 
 module.exports = {
   isActive: false,
-  expression: '* * * * * */5',
+  expression: '* * * * * *',
   options: {
     timeZone: 'Asia/Ho_Chi_Minh',
     runOnInit: false

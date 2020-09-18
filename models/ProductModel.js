@@ -1,5 +1,4 @@
 const Schema = require('mecore').Mongoose.Schema;
-const Joi = require('mecore').Joi;
 
 const Model = {
   connection: 'default',
