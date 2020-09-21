@@ -1,4 +1,4 @@
 module.exports = {
-  locales: ['en', 'vi'],
+  locales: ['en','vi'],
   languageHeaderField: 'language'
 };

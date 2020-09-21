@@ -43,7 +43,6 @@ module.exports = [
       }).code(1000);
     },
     options: {
-      // auth: 'Local',
       validate: {
         payload: Joi.object({
           username: Joi.string().min(1).max(20).example('11').description('test')
