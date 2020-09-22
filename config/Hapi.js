@@ -8,7 +8,8 @@ module.exports = {
         failAction: (request, h, err) => {
           throw err;
         }
-      }
+      },
+      cors: true
     }
   },
   plugins: {

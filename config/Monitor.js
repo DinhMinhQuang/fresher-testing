@@ -19,9 +19,9 @@ module.exports = {
           }
         }
       }
-    }  
+    }
   },
   handleAlert: () => {
-    
+
   }
 };

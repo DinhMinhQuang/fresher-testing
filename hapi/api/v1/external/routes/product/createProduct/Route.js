@@ -1,8 +1,8 @@
 const Joi = require('mecore').Joi;
-const ProductModel = require('../../../../../models/ProductModel');
-const ResponseCode = require('../../../../../config/ResponseCode');
+const ProductModel = require('../../../../../../../models/ProductModel');
+const ResponseCode = require('../../../../../../../config/ResponseCode');
 module.exports = [
-    
+
     {
         method: 'POST',
         path: '/v1/product',

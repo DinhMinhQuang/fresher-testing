@@ -2,7 +2,7 @@ const Schema = require('mecore').Mongoose.Schema;
 
 const Model = {
     connection: 'default',
-    tableName: 'Account',
+    tableName: 'Bank',
     autoIncrement: {
         id: {
             startAt: 1,
@@ -10,15 +10,7 @@ const Model = {
         }
     },
     attributes: new Schema({
-        phone: String,
-        fullname: String,
-        balance: Number,
-        banks: [
-            {
-                type: Number,
-                ref: "Bank"
-            }
-        ]
+        name:String
     }, {
         timestamps: true
     })

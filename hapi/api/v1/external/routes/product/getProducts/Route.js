@@ -3,7 +3,7 @@ const ProductModel = require('../../../../../../../models/ProductModel');
 const ResponseCode = require('../../../../../../../config/ResponseCode');
 const Module = require('./Module');
 module.exports = [
-     
+
     {
         method: 'GET',
         path: '/v1/product',

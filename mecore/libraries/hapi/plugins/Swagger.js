@@ -3,7 +3,6 @@ const Utility = require('../../Utility');
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
-
 module.exports = {
   async Apply(instanceName, projectDir) {
     try {

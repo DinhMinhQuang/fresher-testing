@@ -11,8 +11,11 @@ const Model = {
     }
   },
   attributes: new Schema({
-    username: String,
-    password: String
+    fullname: String,
+    userId: String,
+    accountId: String,
+    appId: String,
+    balance: Number
   }, {
     timestamps: true
   })

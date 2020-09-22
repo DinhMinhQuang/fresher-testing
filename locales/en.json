@@ -3,9 +3,11 @@
 	"\"x-api-client\" not found!": "\"x-api-client\" not found!",
 	"Wrong username": "Wrong username",
 	"Wrong password": "Wrong password",
-	"Insert Successfully": "Can't insert",
+	"Insert Successfully": "Insert Successfully",
 	"Insert Failed": "Insert Fail",
 	"Can't find": "Can't find",
 	"Can't find this": "Can't find this",
-	"Test": "Test"
+	"Test": "Test",
+	"Phone exists": "Phone exists",
+	"Account not exist": "Account not exist"
 }

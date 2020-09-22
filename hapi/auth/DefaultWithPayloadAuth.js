@@ -5,7 +5,7 @@ module.exports = {
   async validate(decoded, request, reply) {
     if (!decoded.id) {
       return { isValid: false };
-    }    
+    }
     return { isValid: true };
   },
   async payloadFunc(request, reply) {
