@@ -11,8 +11,8 @@ module.exports = [
             auth: false,
             validate: {
                 payload: Joi.object({
-                    phone: Joi.string().regex(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/).example('0377740378'),
-                    fullname: Joi.string().required().example('Pham Trong Nghia')
+                    phone: Joi.string().regex(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/).example('0931329271').required(),
+                    fullname: Joi.string().required().example('Dinh Minh Quang')
                 }).label('PAYLOAD_TEST')
             },
             tags: ['api', 'internal', 'v1'],

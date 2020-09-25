@@ -1,3 +1,4 @@
 {
-	"Client IP {{clientIp}}": "Client IP {{clientIp}}"
+	"Client IP {{clientIp}}": "Client IP {{clientIp}}",
+	"\"x-api-client\" not found!": "\"x-api-client\" not found!"
 }

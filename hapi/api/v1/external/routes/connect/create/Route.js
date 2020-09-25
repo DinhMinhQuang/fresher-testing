@@ -13,8 +13,8 @@ module.exports = [
                 payload: Joi.object({
                     userId: Joi.string().required().example('#da@1231E2e@2da@!!!#'),
                     appId: Joi.number().required().example(1),
-                    phone: Joi.string().required().example('0377740378'),
-                    fullname: Joi.string().required().example('Pham Trong Nghia')
+                    phone: Joi.string().required().example('0931329271'),
+                    fullname: Joi.string().required().example('Dinh Minh Quang')
                 })
             },
             response: {
