@@ -3,8 +3,8 @@ const AccountModel = require("../../../../../../../models/AccountModel");
 
 module.exports = async (request, reply) => {
     try {
-        const {payload} = request;
-        const account = await AccountModel.deleteOne({_id: payload._id})
+        const {userId} = request.params.id;
+        const account = await AccountModel.deleteOne({id: userId})
         if (!account) {
             return reply.api({
                 error: request.i18n.__("Cant Find")
@@ -16,6 +16,8 @@ module.exports = async (request, reply) => {
             }).code(ResponseCode.REQUEST_SUCCESS);
         }
     } catch (error) {
-        
+        return reply.api({
+            error: error
+        }).code(ResponseCode.REQUEST_FAIL);
     }
 }

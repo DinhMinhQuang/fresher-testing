@@ -10,15 +10,22 @@ const Model = {
         }
     },
     attributes: new Schema({
+        email: String,
         phone: String,
-        fullname: String,
+        username: String,
         balance: Number,
+        password:String,
+        verifyCode: String, 
         banks: [
             {
                 type: Number,
                 ref: "Bank"
             }
-        ]
+        ],
+        confirmed:{
+            type: Boolean,
+            default: false
+        }
     }, {
         timestamps: true
     })

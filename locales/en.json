@@ -9,5 +9,18 @@
 	"Can't find this": "Can't find this",
 	"Test": "Test",
 	"Phone exists": "Phone exists",
-	"Account not exist": "Account not exist"
+	"Account not exist": "Account not exist",
+	"Phone Exist": "Phone Exist",
+	"Verify Email": "Verify Email",
+	"Wrong Password": "Wrong Password",
+	"Account Has Been Verified": "Account Has Been Verified",
+	"Wrong Email": "Wrong Email",
+	"Wrong Verify Code": "Wrong Verify Code",
+	"Wait 5 minute to a new code": "Wait 5 minute to a new code",
+	"Username don't Exist": "Username don't Exist",
+	"Email has been sended": "Email has been sended",
+	"Cant Change Password": "Cant Change Password",
+	"Wrong OTP": "Wrong OTP",
+	"OTP Has Been Deleted": "OTP Has Been Deleted",
+	"Change Password Success": "Change Password Success"
 }
