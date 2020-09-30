@@ -22,5 +22,8 @@
 	"Cant Change Password": "Cant Change Password",
 	"Wrong OTP": "Wrong OTP",
 	"OTP Has Been Deleted": "OTP Has Been Deleted",
-	"Change Password Success": "Change Password Success"
+	"Change Password Success": "Change Password Success",
+	"Your Ip Has Been Block For 60 min": "Your Ip Has Been Block For 60 min",
+	"Your username Has Been Block For 5 min": "Your username Has Been Block For 5 min",
+	"Waiting For 5 min Dudeeee": "Waiting For 5 min Dudeeee"
 }

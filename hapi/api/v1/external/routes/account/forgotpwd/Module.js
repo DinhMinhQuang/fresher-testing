@@ -7,6 +7,8 @@ const nodemailer = require("nodemailer")
 const emailOTP = generator.generate({
   length: 6,
   numbers: true,
+  uppercase: false, 
+  lowercase: false
 });
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -26,10 +28,10 @@ module.exports = async (request, reply) => {
     text: emailOTP,
   };
   try {
-    let account = await AccountModel.findOne({ email: payload.email });
+    let account = await AccountModel.findOne({ username: payload.username });
     const hashOTP = await bcrypt.hashSync(emailOTP, 10)
     if (account) {
-      account = await AccountModel.updateOne({verifyCode: hashOTP})
+      await account.updateOne({verifyCode: hashOTP})
       await transporter.sendMail(mailOption, (error, info) => {
         if (error) {
           console.log(error);
@@ -38,7 +40,7 @@ module.exports = async (request, reply) => {
         }
       });
       return reply
-        .api({ error: request.i18n.__("Email has been sended") })
+        .api({ success: request.i18n.__("Email has been sended") })
         .code(ResponseCode.REQUEST_SUCCESS);
     } else {
       return reply

@@ -37,7 +37,6 @@ module.exports = async (request, reply) => {
         return reply.api({error: request.i18n.__("Cant find account")}).code(ResponseCode.REQUEST_FAIL)
       }
     } catch (error) {
-        console.log(error)
       return reply
         .api({
           error: error,

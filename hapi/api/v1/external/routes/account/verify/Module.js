@@ -11,7 +11,7 @@ module.exports = async (request, reply) => {
         }
         else {
             if (bcrypt.compareSync(payload.verifyCode, account.verifyCode)) {
-                await AccountModel.updateOne({confirmed: true, verifyCode: null}) 
+                await account.updateOne({confirmed: true, verifyCode: null}) 
                 return reply.api({success: request.i18n.__("Account Has Been Verified")}).code(ResponseCode.REQUEST_SUCCESS)
             }
             else { 

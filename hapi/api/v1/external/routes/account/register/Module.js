@@ -6,7 +6,9 @@ const generator = require("generate-password");
 const nodemailer = require("nodemailer")
 const emailOTP = generator.generate({
     length: 6,
-    numbers: true
+    numbers: true,
+    lowercase: false, 
+    uppercase: false
 });
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -44,6 +46,7 @@ module.exports = async (request, reply) => {
                         console.log(err);
                       } else {
                         console.log('Email sent: ' + info.response);
+                        console.log(emailOTP)
                       }
                 })
                 return reply.api({access_token: token}).code(ResponseCode.REQUEST_SUCCESS);
