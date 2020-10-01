@@ -1,8 +1,6 @@
 const Joi = require('mecore').Joi;
-const AccountModel = require('../../../../../../../models/AccountModel');
 const ResponseCode = require('../../../../../../../constants/ResponseCode');
 const Module = require('./Module');
-
 
 module.exports = [
     {
@@ -22,6 +20,9 @@ module.exports = [
             tags: ['api', 'internal', 'v1'],
             response: {
                 status: {
+                    [ResponseCode.REQUEST_SUCCESS]: Joi.object({
+                        message: Joi.string()
+                    }).label('MESSAGE'),
                     [ResponseCode.REQUEST_SUCCESS]: Joi.object({
                         access_token: Joi.string()
                     }).label('TOKEN').unknown(true),

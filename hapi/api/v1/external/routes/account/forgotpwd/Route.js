@@ -13,15 +13,17 @@ module.exports = [
             validate: {
                 payload: Joi.object({
                     username: Joi.string().required().regex(/^[^0-9][a-zA-Z0-9]{8,}$/).example('minhquang123'),
-                    email: Joi.string().regex(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).example('minhquang@gmail.com').required(),
                 }).label('VERIFY')
             },
             tags: ['api', 'internal', 'v1'],
             response: {
                 status: {
                     [ResponseCode.REQUEST_SUCCESS]: Joi.object({
-                        success: Joi.string()
-                    }).label('SUCCESS'),
+                        message: Joi.string()
+                    }).label('TOKEN').unknown(true),
+                    [ResponseCode.REQUEST_SUCCESS]: Joi.object({
+                        access_token: Joi.string()
+                    }).label('TOKEN').unknown(true),
                     [ResponseCode.REQUEST_FAIL]: Joi.object({
                         error: Joi.string()
                     }).label('FAILED')

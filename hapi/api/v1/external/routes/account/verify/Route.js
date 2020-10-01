@@ -13,7 +13,7 @@ module.exports = [
             auth: 'Default',
             validate: {
                 payload: Joi.object({
-                    verifyCode: Joi.string().example('nBtRD6PBlc').required()
+                    verifyCode: Joi.string().example('884188').required()
                 }).label('VERIFY')
             },
             tags: ['api', 'internal', 'v1'],

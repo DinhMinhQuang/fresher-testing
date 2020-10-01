@@ -15,13 +15,19 @@ const Model = {
         username: String,
         balance: Number,
         password:String,
-        verifyCode: String, 
-        banks: [
+        verifyCode: {
+            type: String,
+            default: null
+        },
+        clientIp: [
             {
-                type: Number,
-                ref: "Bank"
+                type: String
             }
-        ],
+        ], 
+        countWrongOTP: {
+            type: Number, 
+            default: 0
+        },
         confirmed:{
             type: Boolean,
             default: false

@@ -1,7 +1,6 @@
-const Joi = require('mecore').Joi;
-const AccountModel = require('../../../../../../../models/AccountModel');
-const ResponseCode = require('../../../../../../../constants/ResponseCode');
-const Module = require('./Module');
+const Joi = require('mecore').Joi
+const ResponseCode = require('../../../../../../../constants/ResponseCode')
+const Module = require('./Module')
 
 module.exports = [
     {
@@ -13,7 +12,7 @@ module.exports = [
             validate: {
                 payload: Joi.object({
                     password: Joi.string().example('minhquang2411').required(),
-                    verifyCode: Joi.string().example('nBtRD6').required()
+                    verifyCode: Joi.string().example('123456').required()
                 }).label('REST-PASSWORD')
             },
             tags: ['api', 'internal', 'v1'],

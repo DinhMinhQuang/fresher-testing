@@ -25,5 +25,10 @@
 	"Change Password Success": "Change Password Success",
 	"Your Ip Has Been Block For 60 min": "Your Ip Has Been Block For 60 min",
 	"Your username Has Been Block For 5 min": "Your username Has Been Block For 5 min",
-	"Waiting For 5 min Dudeeee": "Waiting For 5 min Dudeeee"
+	"Waiting For 5 min Dudeeee": "Waiting For 5 min Dudeeee",
+	"OTP Has Been Deleted, Wait 5 Min Dude": "OTP Has Been Deleted, Wait 5 Min Dude",
+	"Username Exist": "Username Exist",
+	"You Register 3 Account On This Ip, Your Verify Code Has Been Send To Your Account": "You Register 3 Account On This Ip, Your Verify Code Has Been Send To Your Account",
+	"You Register More Than 3 Account On This Ip, Your Verify Code Has Been Send To Your Account": "You Register More Than 3 Account On This Ip, Your Verify Code Has Been Send To Your Account",
+	"OTP Has Been Send For Your Email": "OTP Has Been Send For Your Email"
 }

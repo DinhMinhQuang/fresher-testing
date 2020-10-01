@@ -1,7 +1,6 @@
-const Joi = require('mecore').Joi;
-const AccountModel = require('../../../../../../../models/AccountModel');
-const ResponseCode = require('../../../../../../../constants/ResponseCode');
-const Module = require('./Module');
+const Joi = require('mecore').Joi
+const ResponseCode = require('../../../../../../../constants/ResponseCode')
+const Module = require('./Module')
 
 module.exports = [
     {

@@ -1,16 +1,16 @@
-const AccountModel = require('../../../../../../../models/AccountModel');
-const ResponseCode = require('../../../../../../../constants/ResponseCode');
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const redis = require("redis");
-const client = redis.createClient();
+const AccountModel = require('../../../../../../../models/AccountModel')
+const ResponseCode = require('../../../../../../../constants/ResponseCode')
+const jwt = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
+const redis = require("redis")
+const client = redis.createClient()
 const {promisify} = require('util')
 
 module.exports = async (request, reply) => {
-    const {payload} = request;
-    const username = await promisify(client.get).call(client, payload.username);
-    const clientIp = await promisify(client.get).call(client,"clientIp");
-    const userWrong = await promisify(client.get).call(client,"userWrong");
+    const {payload} = request
+    const username = await promisify(client.get).call(client, payload.username)
+    const clientIp = await promisify(client.get).call(client, request.clientIp)
+    const userWrong = await promisify(client.get).call(client,"userWrong")
     const spamTime = await promisify(client.get).call(client, "spamTime")
     const ipWrong = await promisify(client.get).call(client, "ipWrong")
     try {
@@ -27,23 +27,23 @@ module.exports = async (request, reply) => {
                         }
                         else {
                             client.incrby("userWrong", 1)
-                            client.setex("spamTime", 120, 'Check Spam')
+                            client.setex("spamTime", 60, 'Check Spam')
                             if (spamTime != null) {
                                 client.incrby("ipWrong", 1)
                                 if (ipWrong > 20) {
-                                    client.decr("ipWrong", 21)
-                                    client.setex("clientIp", 3600, request.clientIp)
+                                    client.decrby("ipWrong", ipWrong)
+                                    client.setex(request.clientIp, 3600, request.clientIp)
                                 }
                             }
                             else { 
-                                client.decr("ipWrong", 21)
+                                client.decrby("ipWrong", ipWrong)
                             }
                             if (userWrong < 3) { 
                                 console.log(userWrong)
                                 return reply.api({error: request.i18n.__("Wrong Password")}).code(ResponseCode.REQUEST_FAIL)
                             }
                             else {
-                                client.decrby("userWrong", 4)
+                                client.decrby("userWrong", userWrong)
                                 client.setex(account.username, 60, account.username)
                                 return reply.api({error: request.i18n.__("Your username Has Been Block For 5 min")}).code(ResponseCode.REQUEST_FAIL)
                             }                       
@@ -62,7 +62,7 @@ module.exports = async (request, reply) => {
             }
         }
         else { 
-            return reply.api({error: request.i18n.__("Wrong Email")}).code(ResponseCode.REQUEST_FAIL)
+            return reply.api({error: request.i18n.__("Wrong Username")}).code(ResponseCode.REQUEST_FAIL)
         }
     } catch (error) {
         return reply.api({
